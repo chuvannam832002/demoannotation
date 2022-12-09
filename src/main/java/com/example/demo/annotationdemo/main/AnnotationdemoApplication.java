@@ -30,8 +30,14 @@ public class AnnotationdemoApplication {
 	//////	AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Appconfig.class);
 //		////DemoBean demoBean = (DemoBean) context.getBean(DemoBean.class);
 //		////System.out.println(demoBean.getMessage());
-		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Beanconfig.class);
-		FirstBean firstBean = (FirstBean) context.getBean("firstBean");
+		//.AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Beanconfig.class);
+		//.FirstBean firstBean = (FirstBean) context.getBean("firstBean");
+		ApplicationContext context = SpringApplication.run(AnnotationdemoApplication.class);
+		GirlService girlService = context.getBean(GirlService.class);
+		int id=1;
+		Girl girl = girlService.findgirlbyiduppercase(id);
+		System.out.println("Nguoi co id = "+id +"co du lieu la:");
+		System.out.println(girl.getName());
 		//logger.info(appconfiguration.getIntergurationurl());
 	}
 
