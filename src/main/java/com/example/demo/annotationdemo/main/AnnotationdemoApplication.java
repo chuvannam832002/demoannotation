@@ -1,7 +1,9 @@
 package com.example.demo.annotationdemo.main;
 
 import com.example.demo.annotationdemo.bean.DemoBean;
+import com.example.demo.annotationdemo.bean.FirstBean;
 import com.example.demo.annotationdemo.config.Appconfig;
+import com.example.demo.annotationdemo.config.Beanconfig;
 import com.example.demo.annotationdemo.configuration.Appconfiguration;
 import com.example.demo.annotationdemo.model.TestModel;
 import org.slf4j.Logger;
@@ -25,9 +27,11 @@ public class AnnotationdemoApplication {
 		////ApplicationContext context = SpringApplication.run(AnnotationdemoApplication.class);
 		////System.out.println(context.getBean(TestModel.class));
 		//logger.info(appconfiguration.getServerport());
-		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Appconfig.class);
-		DemoBean demoBean = (DemoBean) context.getBean(DemoBean.class);
-		System.out.println(demoBean.getMessage());
+	//////	AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Appconfig.class);
+//		////DemoBean demoBean = (DemoBean) context.getBean(DemoBean.class);
+//		////System.out.println(demoBean.getMessage());
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Beanconfig.class);
+		FirstBean firstBean = (FirstBean) context.getBean("firstBean");
 		//logger.info(appconfiguration.getIntergurationurl());
 	}
 
